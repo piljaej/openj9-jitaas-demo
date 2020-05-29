@@ -25,7 +25,7 @@ sudo docker run --rm -d \
    -p 3000:3000 \
    -v $PWD/grafana_storage:/var/lib/grafana \
    -v $PWD/grafana_datasources:/etc/grafana/provisioning/datasources \
-   -e "GF_SERVER_ROOT_URL=http://192.168.0.11:3000" \
+   -e "GF_SERVER_ROOT_URL=http://192.168.0.16:3000" \
    --user root \
    --name=grafana grafana/grafana:5.1.0 
 

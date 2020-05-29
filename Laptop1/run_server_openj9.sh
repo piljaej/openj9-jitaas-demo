@@ -30,6 +30,6 @@ sudo docker run -d --rm \
     --cpuset-cpus=0 \
     --cpus=0.5 \
     --memory=$CONTAINER_SIZE --memory-swap=$CONTAINER_SIZE \
-    -p 192.168.0.10:9190:9190 \
+    -p 192.168.0.30:9190:9190 \
     -v $PWD/server_output_openj9:/output:delegated \
     --name server_openj9 server_openj9

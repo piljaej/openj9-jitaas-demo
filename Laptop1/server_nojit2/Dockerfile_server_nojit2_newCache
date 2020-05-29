@@ -73,7 +73,7 @@ COPY mongo.properties /config/mongo.properties
 COPY acmeair-webapp-2.0.0-SNAPSHOT.war /config/apps
 ENV ACMEAIR_PROPERTIES=/config/mongo.properties
 
-ENV JITSERVER_IP=192.168.0.11
+ENV JITSERVER_IP=192.168.0.16
 
 # JITaaS has no AOT support at this time (will change): use -Xnoaot
 # -XJITaaSClient:server=<IP> directs the JVM to use the remote JIT service hosted at IP (default port is 38400)

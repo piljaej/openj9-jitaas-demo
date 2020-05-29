@@ -62,7 +62,7 @@ COPY jmeter.sh $JMETER_HOME/bin/jmeter.sh
 RUN chmod u+x $JMETER_HOME/bin/jmeter.sh
 
 # Adjust the host this is going to connect to based on an environment variable
-ENV LIBERTYHOST 192.168.0.11
+ENV LIBERTYHOST 192.168.0.16
 
 # Environment variables that we want the user to redefine
 ENV JPORT 9290

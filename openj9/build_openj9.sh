@@ -35,7 +35,7 @@ if [[ "$1" == "--fetch-repos" ]]; then
 
 	# needed this temporarily while openssl issues are worked out
 	# Live demo at Code One did use this particular commit
-	#git checkout 1ba8f1a08bdf67590fabbb0b4a57195da97dd2ef
+	git checkout 1ba8f1a08bdf67590fabbb0b4a57195da97dd2ef
 
 	bash ./get_source.sh -openj9-branch=jitaas -omr-branch=jitaas
 	sudo docker build -f openj9/buildenv/docker/jdk8/x86_64/ubuntu16/Dockerfile -t=openj9 .
@@ -47,5 +47,7 @@ sudo docker build -f Dockerfile_build_openj9 -t=build_openj9 .
 
 # Full build of OpenJDK8 with Openj9
 if [[ $? == 0 ]]; then
+	echo " ######## P1 ####### "
 	sudo docker run -v $PWD/j2sdk-image:/openj9-openjdk-jdk8/build/linux-x86_64-normal-server-release/images/j2sdk-image -it build_openj9 $1
+	echo " ######## P2 ####### "
 fi

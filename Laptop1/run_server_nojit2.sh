@@ -30,7 +30,7 @@ sudo docker run -d --rm \
     --cpuset-cpus=3 \
     --cpus=0.5 \
     --memory=$CONTAINER_SIZE --memory-swap=$CONTAINER_SIZE \
-    -p 192.168.0.10:9390:9390 \
+    -p 192.168.0.30:9390:9390 \
     -v $PWD/sharedCache_openj9:/cache \
     -v $PWD/server_output_nojit2:/output \
     --name server_nojit2 server_nojit2
