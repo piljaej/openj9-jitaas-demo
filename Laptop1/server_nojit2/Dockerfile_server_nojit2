@@ -80,6 +80,6 @@ ENV JITSERVER_IP=192.168.0.16
 # -XJITaaSClient:server=<IP> directs the JVM to use the remote JIT service hosted at IP (default port is 38400)
 # -Xjit:sampleThreshold=0,scorchingSampleThreshold=0 makes it impossible to do hot/scorching compilations, which tend to take a long
 #     time and have little effect on AcmeAir performance; this should really be part of JITaaS default tuning
-ENV JVM_ARGS="-Xshareclasses:controlDir=/cache,name=server_nojit -Xnoaot -XX:+UseContainerSupport -XX:+UseJITServer:server=$JITSERVER_IP -Xjit:sampleThreshold=0,scorchingSampleThreshold=0,verbose={compilePerformance},verbose={jitaas},vlog=/output/vlog,disableSuffixLogs"
+ENV JVM_ARGS="-Xshareclasses:controlDir=/cache,name=server_nojit -Xnoaot -XX:+UseContainerSupport -XX:+UseJITServerAddress=$JITSERVER_IP -Xjit:sampleThreshold=0,scorchingSampleThreshold=0,verbose={compilePerformance},vlog=/output/vlog,disableSuffixLogs"
 
 ENV JAVA_HOME="/opt/openjdk8-openj9"

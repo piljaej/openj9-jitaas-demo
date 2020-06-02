@@ -45,3 +45,5 @@ echo $PWD
 
 sudo docker run -d --name openj9-jit openj9-jitserver-build
 sudo docker cp openj9-jit:/root/j2sdk-image ./j2sdk-image
+sudo docker stop openj9-jit
+sudo docker rm openj9-jit

@@ -63,4 +63,4 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 COPY j2sdk-image /opt/openjdk8-openj9
 ENV JAVA_HOME=/opt/openjdk8-openj9
 
-ENTRYPOINT ["/opt/openjdk8-openj9/jre/bin/java", "-XX:StartAsJITServer", "-Xjit:verbose={compilePerformance},verbose={jitaas},vlog=/output/vlog.jitserver,disableSuffixLogs"]
+ENTRYPOINT ["/opt/openjdk8-openj9/jre/bin/jitserver", "-Xjit:verbose={compilePerformance},vlog=/output/vlog.jitserver,disableSuffixLogs"]
