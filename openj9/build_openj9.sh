@@ -30,15 +30,18 @@ rm -rf openj9
 git clone https://github.com/eclipse/openj9.git
 
 cd ./openj9
-git checkout jitaas
+#git checkout jitaas -> not work
+git checkout master
 
-cd ./buildenv/docker/jdk8/x86_64/ubuntu18
-docker build -f Dockerfile -t=openj9 .
+cd ./buildenv/docker
+bash mkdocker.sh --build --dist=ubuntu --tag=openj9 --version=18
 
-cd ./jitserver/build
-docker build -f Dockerfile -t=openj9-jitserver .
+cd ./jdk8/x86_64/ubuntu18/jitserver/build
+docker build -f Dockerfile -t=openj9-jitserver-build .
 
-cd ../../../../../../../../
+cd ../../../../../../../../../
 
-sudo docker run -d --name openj9-jit openj9-jitserver
+echo $PWD
+
+sudo docker run -d --name openj9-jit openj9-jitserver-build
 sudo docker cp openj9-jit:/root/j2sdk-image ./j2sdk-image
