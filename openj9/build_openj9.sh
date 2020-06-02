@@ -39,7 +39,7 @@ bash mkdocker.sh --build --dist=ubuntu --tag=openj9 --version=18
 cd ./jdk8/x86_64/ubuntu18/jitserver/build
 docker build -f Dockerfile -t=openj9-jitserver-build .
 
-cd ../../../../../../../../../
+cd ../../../../../../../../
 
 echo $PWD
 
