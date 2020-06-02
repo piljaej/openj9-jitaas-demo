@@ -25,29 +25,20 @@
 #    --fetch-repos    downloads all repositories from scratch, WILL ERASE EXISTING openj9-openjdk-jdk8 directory
 #    --noclean        do not run "make clean" before building OpenJDK8 with OpenJ9
 #
- 
-if [[ "$1" == "--fetch-repos" ]]; then
-	shift
-	rm -rf openj9-openjdk-jdk8
-	# get and build the openj9 default build container
-	git clone https://github.com/ibmruntimes/openj9-openjdk-jdk8
-	cd openj9-openjdk-jdk8
 
-	# needed this temporarily while openssl issues are worked out
-	# Live demo at Code One did use this particular commit
-	git checkout 1ba8f1a08bdf67590fabbb0b4a57195da97dd2ef
+rm -rf openj9
+git clone https://github.com/eclipse/openj9.git
 
-	bash ./get_source.sh -openj9-branch=jitaas -omr-branch=jitaas
-	sudo docker build -f openj9/buildenv/docker/jdk8/x86_64/ubuntu16/Dockerfile -t=openj9 .
-	cd ..
-fi
+cd ./openj9
+git checkout jitaas
 
-# Create the jitaas build enviroment on top of openj9's container
-sudo docker build -f Dockerfile_build_openj9 -t=build_openj9 .
+cd ./buildenv/docker/jdk8/x86_64/ubuntu18
+docker build -f Dockerfile -t=openj9 .
 
-# Full build of OpenJDK8 with Openj9
-if [[ $? == 0 ]]; then
-	echo " ######## P1 ####### "
-	sudo docker run -v $PWD/j2sdk-image:/openj9-openjdk-jdk8/build/linux-x86_64-normal-server-release/images/j2sdk-image -it build_openj9 $1
-	echo " ######## P2 ####### "
-fi
+cd ./jitserver/build
+docker build -f Dockerfile -t=openj9-jitserver .
+
+cd ../../../../../../../../
+
+sudo docker run -d --name openj9-jit openj9-jitserver
+sudo docker cp openj9-jit:/root/j2sdk-image ./j2sdk-image

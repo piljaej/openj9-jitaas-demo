@@ -37,10 +37,10 @@ cd AcmeAir_nojit1	&& ./build_jmeter_nojit1.sh	&& cd ..
 echo Building jmeter client for server_nojit2
 cd AcmeAir_nojit2	&& ./build_jmeter_nojit2.sh	&& cd ..
 
-echo Building openj9 for jitserver now
-pushd ../openj9
-./build_openj9.sh --fetch-repos
-popd
+#echo Building openj9 for jitserver now
+#pushd ../openj9
+#./build_openj9.sh
+#popd
 
 echo Building jitserver
 cd jitserver		&& ./build_jitserver.sh		& cd ..

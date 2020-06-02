@@ -20,7 +20,7 @@
 #
 
 # Pull docker containers that are needed
-sudo docker pull ubuntu:16.04			# openj9 build containers use ubuntu16.04
+
 sudo docker pull telegraf			# used to collect memory/CPU metrics from docker containers
 sudo docker pull open-liberty:webProfile7	# OpenLiberty server
 sudo docker pull adoptopenjdk/openjdk8		# used to run OpenJDK8 with Hotspot JVM
@@ -28,8 +28,7 @@ sudo docker pull adoptopenjdk/openjdk8		# used to run OpenJDK8 with Hotspot JVM
 # download all openjdk, openj9, and omr repos
 pushd ../openj9
 
-./build_openj9.sh --fetch-repos
-
+./build_openj9.sh
 cd ../hotspot && ./get_hotspot.sh
 
 popd

@@ -19,7 +19,7 @@
 # SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
 #
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt-get update \
   && apt-get install -qq -y --no-install-recommends \
@@ -63,4 +63,4 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 COPY j2sdk-image /opt/openjdk8-openj9
 ENV JAVA_HOME=/opt/openjdk8-openj9
 
-ENTRYPOINT ["/opt/openjdk8-openj9/jre/bin/java", "-XX:JITaaSServer", "-Xjit:verbose={compilePerformance},verbose={jitaas},vlog=/output/vlog.jitserver,disableSuffixLogs"]
+ENTRYPOINT ["/opt/openjdk8-openj9/jre/bin/java", "-XX:StartAsJITServer", "-Xjit:verbose={compilePerformance},verbose={jitaas},vlog=/output/vlog.jitserver,disableSuffixLogs"]
