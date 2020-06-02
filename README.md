@@ -48,8 +48,9 @@ Here are the setup steps in order:
 
 ```
 	Laptop 1					Laptop 2
-A1.	$ ./buildForFirstRun.sh				$ ./buildAll.sh
-	[ will take a long time ]			[ will take a long time ]
+A1.	$ ./buildForFirstRun.sh				
+	[ will take a long time ]			$ ./buildAll.sh
+							[ will take a long time ]
 A2.							$ ./startForFirstRun.sh
 A3.	$ ./startForFirstRun.sh
 A4.	[run sudo docker stats and wait until activity
