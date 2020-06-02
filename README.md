@@ -21,8 +21,8 @@ infrastructure.  You'll then have to run the appropriate configuration steps on 
 sections below show what you need to do.
 
 The scripts in this repository assume:
-. Laptop1 is 192.168.0.10
-. Laptop2 is 192.168.0.11
+. Laptop1 is 192.168.0.16
+. Laptop2 is 192.168.0.16
 
 At the moment, youll have to do a recursive grep to find the references to those IP addresses to change them if you're running on
 different IP addresses. It shouldn't be too hard to make it easier to set up the server IPs, but that didn't make it into this
