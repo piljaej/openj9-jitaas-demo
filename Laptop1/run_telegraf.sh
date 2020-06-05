@@ -22,4 +22,4 @@
 sudo docker run --rm -d \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
-    --name=telegraf telegraf
+    --name=telegraf_lap1 telegraf
