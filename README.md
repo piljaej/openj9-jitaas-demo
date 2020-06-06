@@ -69,7 +69,8 @@ steps are how you run the demo once it has been built:
 B1.							$ ./startAll.sh
 B2.							Open in browser: http://Laptop2:3000
                     					                 [login: admin, password: admin]
-B3.							Click on Acmeair Jit as a Service Demo dashboard
+B3.							Add datasources: server_docker_metrics, jmeter, and docker_metrics.
+							Then, import .json file on grafana_storage.
 B4.	$ ./startAll.sh
 B5.	$ sudo docker stats
 B6.	(wait until activity on all servers dies down
