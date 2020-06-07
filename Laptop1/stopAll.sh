@@ -24,4 +24,4 @@ sudo docker stop server_hotspot
 sudo docker stop server_openj9
 sudo docker stop server_nojit1
 sudo docker stop server_nojit2
-sudo docker stop telegraf
+sudo docker stop telegraf_lap1
