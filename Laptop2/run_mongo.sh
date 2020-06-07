@@ -31,9 +31,9 @@ else
 	    --network=host \
 	    --cpuset-cpus=0 \
 	    -v $PWD/AcmeAir_hotspot:/tmp/acmeair \
-	    --name mongo_hotspot mongo --nojournal --port 27017
+	    --name mongo_hotspot mongo --nojournal --port 27018
 	sleep 2
-	sudo docker exec -it mongo_hotspot mongorestore --port=27017 --drop /tmp/acmeair
+	sudo docker exec -it mongo_hotspot mongorestore --port=27018 --drop /tmp/acmeair
 fi
 
 if [[ "$1" == "--no-openj9" ]]; then
