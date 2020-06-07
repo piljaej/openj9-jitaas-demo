@@ -27,7 +27,7 @@
 #
 
 rm -rf openj9
-git clone https://github.com/eclipse/openj9.git
+git clone https://github.com/piljaej/openj9.git
 
 cd ./openj9
 #git checkout jitaas -> not work
