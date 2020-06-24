@@ -47,6 +47,7 @@ else
         --cpuset-cpus='1-3' \
         -p 38400:38400 \
         -v $PWD/jitserver_output_3c:/output \
+        -v $PWD/jitserver/j2sdk-image:/opt/openjdk8-openj9 \
         --name jitserver jitserver 
 
 fi
