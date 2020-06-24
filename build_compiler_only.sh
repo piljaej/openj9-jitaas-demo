@@ -29,11 +29,10 @@ export JIT_DLL_DIR=$TRHOME
 export J9VM_OPT_JITSERVER=1
 
 #echo $PWD
+#rm -rf $JIT_OBJBASE
 
 make -C $TRHOME/compiler -f compiler.mk BUILD_CONFIG=prod -j 4 J9_VERSION=29
 
 #echo $PWD
 
 cp libj9jit29.so $JAVA_BASE/images/j2sdk-image/jre/lib/amd64/compressedrefs/
-
-rm -rf $JIT_OBJBASE
