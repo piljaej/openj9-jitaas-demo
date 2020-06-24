@@ -1,4 +1,7 @@
-# How to modify compiler components
+# How to modify compiler components after building openj9
+
+*Requires building openj9 by running ./buildForFirstRun.sh
+
 First, give permission to files so that those files can be executed inside docker.
 ```
 $ sudo chmod +x run_modificationForFirst.sh
