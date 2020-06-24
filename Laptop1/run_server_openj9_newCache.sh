@@ -35,4 +35,5 @@ sudo docker run -d --rm \
     -p 192.168.0.16:9190:9190 \
     -v $PWD/sharedCache_openj9:/cache \
     -v $PWD/server_output_openj9:/output \
+    -v $PWD/server_openj9/j2sdk-image:/opt/openjdk8-openj9 \    
     --name server_openj9 server_openj9
