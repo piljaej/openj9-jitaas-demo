@@ -32,4 +32,5 @@ sudo docker run -d --rm \
     --memory=$CONTAINER_SIZE --memory-swap=$CONTAINER_SIZE \
     -p 192.168.0.16:9190:9190 \
     -v $PWD/server_output_openj9:/output:delegated \
+    -v $PWD/server_openj9/j2sdk-image:/opt/openjdk8-openj9 \
     --name server_openj9 server_openj9
