@@ -33,5 +33,6 @@ sudo docker run -d --rm \
     -p 192.168.0.16:9290:9290 \
     -v $PWD/sharedCache_openj9:/cache \
     -v $PWD/server_output_nojit1:/output \
+    -v $PWD/server_nojit1/j2sdk-image:/opt/openjdk8-openj9 \
     --env JVM_ARGS="-Xshareclasses:controlDir=/cache,name=server_nojit -Xnoaot -XX:+UseContainerSupport -XX:+UseJITServerAddress=192.168.0.16 -Xjit:sampleThreshold=0,scorchingSampleThreshold=0,verbose={compilePerformance},vlog=/output/vlog,disableSuffixLogs,traceFull,log=/output/log_nojit1" \
     --name server_nojit1 server_nojit1
