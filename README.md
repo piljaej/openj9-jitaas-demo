@@ -1,13 +1,18 @@
 # How to modify compiler components
 First, give permission to files so that those files can be executed inside docker.
+
 $ sudo chmod +x run_modificationForFirst.sh
+
 $ sudo chmod +x run_modification.sh
+
 $ sudo chmod +x build_compiler_only.sh
 
 Then, download original optimizer source code to ./optimizer folder
+
 $ run_modificationForFirst.sh
 
 After, modifying codes inside of the ./optimizer folder  
+
 $ run_modification.sh
 
 Then, repeat same procedure below.
