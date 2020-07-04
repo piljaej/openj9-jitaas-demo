@@ -25,7 +25,7 @@ else
 	CONTAINER_SIZE=256m
 fi
 echo "OpenJ9 (no JIT 1) server using container size $CONTAINER_SIZE and generating a new shared classes cache"
-sudo rm ../sharedCache_openj9/*server_nojit*
+sudo rm ./sharedCache_openj9/*server_nojit*
 sudo docker run -d --rm \
     --network=host \
     --cpuset-cpus=3 \
