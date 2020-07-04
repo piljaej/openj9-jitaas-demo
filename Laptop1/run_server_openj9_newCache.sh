@@ -36,4 +36,5 @@ sudo docker run -d --rm \
     -v $PWD/sharedCache_openj9:/cache \
     -v $PWD/server_output_openj9:/output \
     -v $PWD/server_openj9/j2sdk-image:/opt/openjdk8-openj9 \
+    --env JVM_ARGS="-Xshareclasses:controlDir=/cache,name=server_openj9 -Xscmaxaot32m -Xtune:virtualized -XX:+UseContainerSupport -Xjit:verbose={compilePerformance},vlog=/output/vlog,disableSuffixLogs,safeReservePhysicalMemoryValue=0,traceFull,log=/output/log_nojit1_newCache" \
     --name server_openj9 server_openj9
