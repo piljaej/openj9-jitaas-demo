@@ -18,6 +18,15 @@ $ run_modification.sh
 ```
 Then, repeat same procedure below.
 
+# Need to set time zone of jmeter
+
+Acmeair's Flight information needs to be synchronized with time zone of jmeter.
+The simplest way to set time zone of jmeter is to change time zone of local machin.
+```
+$ sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
+```
+GMT is same time zone with acmeair application.
+
 # Welcome to the OpenJ9 JIT as a Service Demo !
 
 This repository contains scripts and documentation so that you can try out the JIT as a Service demo I first showed at the Oracle Code One conference Oct 22-Oct 25 using 100% open source projects!
