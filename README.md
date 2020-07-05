@@ -21,7 +21,7 @@ Then, repeat same procedure below.
 # Need to set time zone of jmeter
 
 Acmeair's Flight information needs to be synchronized with time zone of jmeter.
-The simplest way to set time zone of jmeter is to change time zone of local machin.
+The simplest way to set time zone of jmeter is to change time zone of local machine.
 ```
 $ sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
 ```
