@@ -30,6 +30,7 @@ GMT is same time zone with acmeair application.
 # Load database
 
 Go to the home page http://hostname:port
+
 At the bottom of the page, click the link : Configure the Acme Air Environment > Click Load the database
 
 
