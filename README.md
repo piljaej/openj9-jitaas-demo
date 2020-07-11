@@ -27,6 +27,12 @@ $ sudo ln -sf /usr/share/zoneinfo/GMT /etc/localtime
 ```
 GMT is same time zone with acmeair application.
 
+# Load database
+
+Go to the home page http://hostname:port
+At the bottom of the page, click the link : Configure the Acme Air Environment > Click Load the database
+
+
 # Welcome to the OpenJ9 JIT as a Service Demo !
 
 This repository contains scripts and documentation so that you can try out the JIT as a Service demo I first showed at the Oracle Code One conference Oct 22-Oct 25 using 100% open source projects!
