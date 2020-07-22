@@ -7,6 +7,8 @@ rm -rf ./j2sdk-image
 
 sdk_path_docker=/root/openj9-openjdk-jdk8/build/linux-x86_64-normal-server-release/images/j2sdk-image
 sudo docker cp openj9-jit-comp:$sdk_path_docker ./j2sdk-image
+sudo docker commit openj9-jit-comp openj9-jit-compiler
+
 
 rm -rf ./Laptop1/server_nojit1/j2sdk-image
 rm -rf ./Laptop1/server_nojit2/j2sdk-image
