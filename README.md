@@ -18,6 +18,26 @@ $ run_modification.sh
 ```
 Then, repeat same procedure below.
 
+# Rebuild entire OpenJ9
+To modify other component like gc or vm, we need to build whole OpenJ9 from scratch.
+First, give permission to files
+```
+$ sudo chmod +x DownloadVM.sh
+$ sudo chmod +x build_vm.sh
+$ sudo chmod +x run_rebuild_vm.sh
+```
+Then, download vm source code to ./openj9_vm
+```
+$ DownloadVm.sh
+```
+After, modifying codes inside of the ./openj9_vm
+```
+$ run_rebuild_vm.sh
+```
+Then, repeat same procedure below.(It takes about 600sec)
+
+
+
 # Need to set time zone of jmeter
 
 Acmeair's Flight information needs to be synchronized with time zone of jmeter.
